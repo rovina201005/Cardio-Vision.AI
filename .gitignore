@@ -54,3 +54,12 @@ backend/backups/
 backend/studies.json
 src/pages/admin/New Text Document.txt
 src/pages/reports/Reports.tsx.bak
+
+# Secrets and Python environment
+.env
+.env.
+!.env.example
+.venv/
+venv/
+_pycache_/
+.py[cod]

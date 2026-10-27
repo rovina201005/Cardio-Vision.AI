@@ -1,4 +1,4 @@
-﻿from datetime import datetime, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 from uuid import uuid4
 
@@ -12,11 +12,13 @@ from sqlalchemy import select, text
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
-from database import SessionLocal, engine
+from database import SessionLocal, engine, Base
 from models import Patient, Study, Prediction, User, AuditLog
 from validation import validate_mri_file
 from inference import predict_image, model
 from auth import router as auth_router, get_current_user
+
+Base.metadata.create_all(bind=engine)
 
 
 app = FastAPI(
